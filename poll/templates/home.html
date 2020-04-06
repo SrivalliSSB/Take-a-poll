@@ -10,7 +10,7 @@
             <div class="panel-heading" style="position: relative;">
                 <h3 class="panel-title">Choose a Poll</h3>
             </div>
-            
+            <div class="scroll "  style="height:300px; overflow:hidden; overflow-y:scroll;" >   
     {% for poll in polls %}
    
     <ul > 
@@ -18,14 +18,14 @@
  
     <strong>{{ poll.question }}</strong>
     <span class="pull-right">
-        <a href= "vote/{{poll.id}}/" class="btn btn-success btn-small " style="display: inline;">Vote</a> &nbsp;
+        <a href= "vote/{{poll.id}}/" class="btn btn-success btn-small " style="margin-top: -6px;">Vote</a> &nbsp;
         <a href="results/{{poll.id}}/" class="btn btn-info btn-small" style="margin-top: -8px;">View Results</a> &nbsp;
     </span>
    
 </li>
 </ul>
 {% endfor %}
-           
+         </div>  
 
 
         </div>
