@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block main %}
+<div class="row" style="height:90vh;display: flex; align-items: center;justify-content: center; width:1200px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" >
+        <div class="panel panel-default">
+            <div class="panel-heading" style="position: relative;">
+                <h3 class="panel-title">Choose a Poll</h3>
+            </div>
+            
+    {% for poll in polls %}
+   
+    <ul > 
+<li class="list-group-item" >
+ 
+    <strong>{{ poll.question }}</strong>
+    <span class="pull-right">
+        <a href= "vote/{{poll.id}}/" class="btn btn-success btn-small " style="display: inline;">Vote</a> &nbsp;
+        <a href="results/{{poll.id}}/" class="btn btn-info btn-small" style="margin-top: -8px;">View Results</a> &nbsp;
+    </span>
+   
+</li>
+</ul>
+{% endfor %}
+           
+
+
+        </div>
+    
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}
